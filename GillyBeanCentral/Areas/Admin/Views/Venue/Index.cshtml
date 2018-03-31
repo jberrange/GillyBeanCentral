@@ -1,0 +1,67 @@
+﻿@model IEnumerable<GillyBeanCentral.Entities.Venue>
+@using GillyBeanCentral.Areas.Admin.Models;
+
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.Partial("_CreateButtonPartial")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.VenueName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Byline)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HasAccommodation)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HasEventFacilities)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Url)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VenueTypeID)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.VenueName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Byline)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HasAccommodation)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HasEventFacilities)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Url)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.VenueTypeID)
+        </td>
+
+        @Html.Partial("_MaintenanceButtonsPartial",
+                          new SmallCRUDButtonModel { ID = item.Id }
+                   )
+
+
+    </tr>
+    }
+
+</table>

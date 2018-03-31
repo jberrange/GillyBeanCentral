@@ -1,0 +1,74 @@
+﻿@model GillyBeanCentral.Entities.Venue
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Venue</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.VenueName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VenueName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Byline)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Byline)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HasAccommodation)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HasAccommodation)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HasEventFacilities)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HasEventFacilities)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ThumbnailUrl)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ThumbnailUrl)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Url)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Url)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VenueTypeID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VenueTypeID)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.Partial("_EditButtonPartial", Model.Id)
+    @Html.Partial("_BackToListButtonPartial")
+</p>
