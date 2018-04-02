@@ -12,109 +12,107 @@ using GillyBeanCentral.Models;
 
 namespace GillyBeanCentral.Areas.Admin.Controllers
 {
-    public class VenueTypeController : Controller
+    public class ActivityOptionController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
-        // GET: Admin/VenueType
+        // GET: Admin/ActivityOption
         public async Task<ActionResult> Index()
         {
-            return View(await db.VenueTypes.ToListAsync());
+            return View(await db.ActivityOptions.ToListAsync());
         }
 
-        // GET: Admin/VenueType/Details/5
+        // GET: Admin/ActivityOption/Details/5
         public async Task<ActionResult> Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            VenueType venueType = await db.VenueTypes.FindAsync(id);
-            if (venueType == null)
+            ActivityOption activityOption = await db.ActivityOptions.FindAsync(id);
+            if (activityOption == null)
             {
                 return HttpNotFound();
             }
-            return View(venueType);
+            return View(activityOption);
         }
 
-        // GET: Admin/VenueType/Create
+        // GET: Admin/ActivityOption/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Admin/VenueType/Create
-        // To protect from overposting attacks, please enable the specific
-        // properties you want to bind to, for 
+        // POST: Admin/ActivityOption/Create
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Create([Bind(Include = "Id,Title")] VenueType venueType)
+        public async Task<ActionResult> Create([Bind(Include = "Id,ActivityName,Byline,Description")] ActivityOption activityOption)
         {
             if (ModelState.IsValid)
             {
-                db.VenueTypes.Add(venueType);
+                db.ActivityOptions.Add(activityOption);
                 await db.SaveChangesAsync();
                 return RedirectToAction("Index");
             }
 
-            return View(venueType);
+            return View(activityOption);
         }
 
-        // GET: Admin/VenueType/Edit/5
+        // GET: Admin/ActivityOption/Edit/5
         public async Task<ActionResult> Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            VenueType venueType = await db.VenueTypes.FindAsync(id);
-            if (venueType == null)
+            ActivityOption activityOption = await db.ActivityOptions.FindAsync(id);
+            if (activityOption == null)
             {
                 return HttpNotFound();
             }
-            return View(venueType);
+            return View(activityOption);
         }
 
-        // POST: Admin/VenueType/Edit/5
+        // POST: Admin/ActivityOption/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Edit([Bind(Include = "Id,Title")] VenueType venueType)
+        public async Task<ActionResult> Edit([Bind(Include = "Id,ActivityName,Byline,Description")] ActivityOption activityOption)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(venueType).State = EntityState.Modified;
+                db.Entry(activityOption).State = EntityState.Modified;
                 await db.SaveChangesAsync();
                 return RedirectToAction("Index");
             }
-            //model state is invalid
-            return View(venueType);
+            return View(activityOption);
         }
 
-        // GET: Admin/VenueType/Delete/5
+        // GET: Admin/ActivityOption/Delete/5
         public async Task<ActionResult> Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            VenueType venueType = await db.VenueTypes.FindAsync(id);
-            if (venueType == null)
+            ActivityOption activityOption = await db.ActivityOptions.FindAsync(id);
+            if (activityOption == null)
             {
                 return HttpNotFound();
             }
-            return View(venueType);
+            return View(activityOption);
         }
 
-        // POST: Admin/VenueType/Delete/5
+        // POST: Admin/ActivityOption/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> DeleteConfirmed(int id)
         {
-            VenueType venueType = await db.VenueTypes.FindAsync(id);
-            db.VenueTypes.Remove(venueType);
+            ActivityOption activityOption = await db.ActivityOptions.FindAsync(id);
+            db.ActivityOptions.Remove(activityOption);
             await db.SaveChangesAsync();
             return RedirectToAction("Index");
         }

@@ -42,6 +42,10 @@ namespace GillyBeanCentral.Models
         public DbSet<Venue> Venues { get; set; }
         public DbSet<VenueType> VenueTypes { get; set; }
         public DbSet<ActivityOption> ActivityOptions { get; set; }
+        public DbSet<VenueActivityOption> VenueActivityOptions { get; set; }
+        public DbSet<VenueEventFacility> VenueEventFacilities { get; set; }
+
+
 
 
     }

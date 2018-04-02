@@ -25,12 +25,7 @@
         <th>
             @Html.DisplayNameFor(model => model.HasEventFacilities)
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Url)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.VenueTypeID)
-        </th>
+
         <th></th>
     </tr>
 
@@ -49,12 +44,7 @@
         <td>
             @Html.DisplayFor(modelItem => item.HasEventFacilities)
         </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Url)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.VenueTypeID)
-        </td>
+
 
         @Html.Partial("_MaintenanceButtonsPartial",
                           new SmallCRUDButtonModel { ID = item.Id }

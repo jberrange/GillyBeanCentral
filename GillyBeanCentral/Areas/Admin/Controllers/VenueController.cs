@@ -40,7 +40,12 @@ namespace GillyBeanCentral.Areas.Admin.Controllers
         // GET: Admin/Venue/Create
         public ActionResult Create()
         {
-            return View();
+            var model = new Venue
+            {
+                VenueTypes = db.VenueTypes.ToList()
+            };
+
+            return View(model);
         }
 
         // POST: Admin/Venue/Create
@@ -72,6 +77,8 @@ namespace GillyBeanCentral.Areas.Admin.Controllers
             {
                 return HttpNotFound();
             }
+     
+            venue.VenueTypes = await db.VenueTypes.ToListAsync();
             return View(venue);
         }
 

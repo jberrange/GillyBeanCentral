@@ -15,7 +15,7 @@ namespace GillyBeanCentral.Entities
 
         [MaxLength(30)]
         [Required]
-        public string Description{ get; set; }
+        public string Title{ get; set; }
 
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
@@ -16,14 +17,17 @@ namespace GillyBeanCentral.Entities
 
         [MaxLength(255)]
         [Required]
+        [DisplayName("Venue Name")]
         public string VenueName { get; set; }
 
         [MaxLength(255)]
         [Required]
         public string Byline { get; set; }
 
+        [DisplayName("Accommodation")]
         public bool HasAccommodation { get; set; }
 
+        [DisplayName("Event Facilities")]
         public bool HasEventFacilities { get; set; }
 
 
@@ -33,7 +37,14 @@ namespace GillyBeanCentral.Entities
         [MaxLength(1024)]
         public string ThumbnailUrl { get; set; }
         
-        public int VenueTypeID { get; set; }
+       
+        //[DisplayName("Event Facilities")]
+        //public ICollection<VenueEventFacility> EventFacilities { get; set; }
 
+        [DisplayName("Venue Types")]
+        public int VenueTypeID { get; set; }
+        public ICollection<VenueType> VenueTypes { get; set; }
+
+        
     }
 }

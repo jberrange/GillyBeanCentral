@@ -190,6 +190,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\ActivityOptionController.cs" />
     <Compile Include="Areas\Admin\Controllers\VenueController.cs" />
     <Compile Include="Areas\Admin\Controllers\VenueTypeController.cs" />
     <Compile Include="Areas\Admin\Models\SmallCRUDButtonModel.cs" />
@@ -198,7 +199,11 @@
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Entities\ActivityOption.cs" />
     <Compile Include="Entities\Venue.cs" />
+    <Compile Include="Entities\VenueEventFacility.cs" />
+    <Compile Include="Entities\VenueActivityOption.cs" />
     <Compile Include="Entities\VenueType.cs" />
+    <Compile Include="Extensions\iCollectionExtensions.cs" />
+    <Compile Include="Extensions\ReflectionExtensions.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -255,6 +260,11 @@
     <Content Include="Areas\Admin\Views\Venue\Details.cshtml" />
     <Content Include="Areas\Admin\Views\Venue\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\Venue\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\ActivityOption\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\ActivityOption\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\ActivityOption\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\ActivityOption\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\ActivityOption\Index.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
